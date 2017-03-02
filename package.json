@@ -1,0 +1,33 @@
+{
+  "name": "zebra.js",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyj1022/zebra.git"
+  },
+  "description": "A simple JavaScript utility library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "zebra.js",
+    "JavaScript"
+  ],
+  "author": "King Zhi <zyj10222@126.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.5",
+    "jest-cli": "^0.9.2",
+    "karma": "^0.13.22",
+    "qunitjs": "^1.23.0",
+    "run-sequence": "^1.1.5"
+  },
+  "dependencies": {}
+}
