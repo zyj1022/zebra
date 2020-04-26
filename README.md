@@ -1,22 +1,14 @@
 # zebra
-====
+-----
 
 zebra 初衷，实现一个简单实用的javascript工具库，原生快速。
 
-# 浏览器类型检测
-- browser
+目前功能包含：
 
-## DOM元素选择
-- getAttr 获取节点属性值
-- setAttr 设置节点属性值
-- show 显示节点
-- hide 隐藏节点
-- hasClass 检查元素是否包含一个类
-- addClass 添加一个或多个样式
-- removeClass 删除一个样式
+- `UrlSearch` 获取URL参数
+- `Browser` 获取浏览器类型
+- `IsAllSpace` 判断是否全部为空格
+- `TrimStrSpace` 去除字符串中首尾的空格
+- `ThousandNum` 数字格式化千分位
 
-## Array操作
 
-- isArray 检查一个对象是否是数组
-
-等等～～～～～～

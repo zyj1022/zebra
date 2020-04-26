@@ -1,33 +1,75 @@
 {
-  "name": "zebra.js",
+  "name": "Zebra",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zyj1022/zebra.git"
-  },
-  "description": "A simple JavaScript utility library",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
+  "description": "",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "typings": "lib/index.d.js",
+  "files": [
+    "lib",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
   "keywords": [
+    "utils",
+    "tool",
     "zebra.js",
     "JavaScript"
   ],
   "author": "King Zhi <zyj10222@126.com>",
   "license": "MIT",
-  "devDependencies": {
-    "browser-sync": "^2.10.1",
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.1",
-    "gulp-watch": "^4.3.5",
-    "jest-cli": "^0.9.2",
-    "karma": "^0.13.22",
-    "qunitjs": "^1.23.0",
-    "run-sequence": "^1.1.5"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyj1022/zebra.git"
   },
-  "dependencies": {}
+  "scripts": {
+    "build": "gulp build",
+    "api": "api-extractor run",
+    "lint": "eslint --ext .js,.ts ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts ./src",
+    "changelog": "gulp changelog",
+    "test": "jest --coverage --verbose -u",
+    "prepublishOnly": "yarn lint & yarn test & yarn changelog & yarn build"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.5",
+    "@microsoft/api-extractor": "^7.7.13",
+    "@types/fs-extra": "^8.1.0",
+    "@types/gulp": "^4.0.6",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.2",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "chalk": "^4.0.0",
+    "conventional-changelog-cli": "^2.0.31",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^23.8.2",
+    "fs-extra": "^9.0.0",
+    "gulp": "^4.0.2",
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "lint-staged": "^10.1.7",
+    "rollup": "^2.7.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.5.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-jest": "^25.4.0",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged & jest -u"
+    }
+  },
+  "lint-staged": {
+    "*.{.ts,.js}": [
+      "eslint",
+      "git add"
+    ]
+  }
 }
